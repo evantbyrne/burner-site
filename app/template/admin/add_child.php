@@ -13,11 +13,11 @@
 <?php $this->extend('breadcrumbs'); ?>
 
 	<ul class="breadcrumb">
-		<li><a href="<?php echo url(); ?>">Home</a> <span class="divider">/</span></li>
-		<li><a href="<?php echo route_url('get', 'App.Vendor.Admin.Controller.Admin', 'index'); ?>">Admin</a> <span class="divider">/</span></li>
-		<li><a href="<?php echo route_url('get', 'App.Vendor.Admin.Controller.Admin', 'model', array($parent_model)); ?>"><?php echo $parent_name; ?></a> <span class="divider">/</span></li>
-		<li><a href="<?php echo route_url('get', 'App.Vendor.Admin.Controller.Admin', 'edit', array($parent_model, $parent_id)); ?>">Edit</a> <span class="divider">/</span></li>
-		<li><a href="<?php echo route_url('get', 'App.Vendor.Admin.Controller.Admin', 'children', array($parent_model, $parent_id, $model)); ?>"><?php echo $model_name; ?></a> <span class="divider">/</span></li>
+		<li><a href="<?= url(); ?>">Home</a> <span class="divider">/</span></li>
+		<li><a href="<?= route_url('get', 'App.Vendor.Admin.Controller.Admin', 'index'); ?>">Admin</a> <span class="divider">/</span></li>
+		<li><a href="<?= route_url('get', 'App.Vendor.Admin.Controller.Admin', 'model', array($parent_model)); ?>"><?= $parent_name; ?></a> <span class="divider">/</span></li>
+		<li><a href="<?= route_url('get', 'App.Vendor.Admin.Controller.Admin', 'edit', array($parent_model, $parent_id)); ?>">Edit</a> <span class="divider">/</span></li>
+		<li><a href="<?= route_url('get', 'App.Vendor.Admin.Controller.Admin', 'children', array($parent_model, $parent_id, $model)); ?>"><?= $model_name; ?></a> <span class="divider">/</span></li>
 		<li class="active">Add</li>
 	</ul>
 
@@ -29,15 +29,11 @@
 
 	<form method="post"<?php if($is_multipart): ?> enctype="multipart/form-data"<?php endif; ?>>
 
-		<div class="form-actions">
-			<input type="submit" value="Save" class="btn btn-primary" />
-		</div>
-
 		<?php foreach($columns as $name => $c): ?>
 
 			<?php if($name == $parent_model): ?>
 			
-				<input type="hidden" name="<?php e($parent_model); ?>" value="<?php e($parent_id); ?>" /> 
+				<input type="hidden" name="<?= e($parent_model); ?>" value="<?= e($parent_id); ?>" /> 
 			
 			<?php else: ?>
 				
@@ -47,6 +43,10 @@
 			<?php endif; ?>
 
 		<?php endforeach; ?>
+
+		<div class="form-actions">
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</div>
 
 	</form>
 

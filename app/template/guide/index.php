@@ -20,13 +20,13 @@
 
 				<?php if(!empty($guides)): ?>
 
-					<h3><?php e($name); ?></h3>
+					<h3><?= e($name); ?></h3>
 
 					<ul class="block">
 
 						<?php foreach($guides as $guide): ?>
 
-							<li><a href="<?= url("guide/{$guide->url}"); ?>"><?= $guide->title; ?></a></li>
+							<li><a href="<?= url("guide/{$guide->url}"); ?>"><?= e($guide->title); ?></a></li>
 
 						<?php endforeach; ?>
 
