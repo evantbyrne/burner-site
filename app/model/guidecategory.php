@@ -12,7 +12,7 @@ class GuideCategory extends \Core\Model\Base {
 	public static $verbose_plural = 'Guide Categories';
 	
 	/**
-	 * @option type = Order
+	 * @option type = Int
 	 */
 	public $order;
 
@@ -29,6 +29,22 @@ class GuideCategory extends \Core\Model\Base {
 	 * @option column = guidecategory
 	 */
 	public $guides;
+
+	/**
+	 * Order Validator
+	 * @return mixed True on valid, string on error
+	 */
+	public function order_validator() {
+
+		if(!in_array($this->order, array('1', '2', '3'))) {
+
+			return 'Must be 1, 2, or 3.';
+
+		}
+
+		return true;
+
+	}
 
 	/**
 	 * To String

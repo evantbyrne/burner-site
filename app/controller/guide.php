@@ -9,7 +9,19 @@ class Guide extends \Core\Controller\Base {
 	 */
 	public function index() {
 
-		return new \Core\Response();
+		$categories = \App\Model\GuideCategory::select()->order_asc('order')->fetch();
+		$columns = array(1 => array(), 2 => array(), 3 => array());
+
+		foreach($categories as $category) {
+
+			$columns[$category->order][$category->title] = $category->guides()
+				->select()
+				->order_asc('order')
+				->fetch();
+
+		}
+
+		$this->data('columns', $columns);
 	
 	}
 
