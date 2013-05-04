@@ -8,6 +8,7 @@
 		<title><?php $this->section('title'); ?>Burner CMS<?php $this->end_section(); ?></title>
 
 		<link rel="stylesheet" type="text/css" href="<?= url('static/style/style.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= url('static/style/bootstrap/css/bootstrap.min.css'); ?>" />
 		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
 
@@ -35,10 +36,16 @@
 				<h1><a href="<?= url(); ?>">burner</a></h1>
 
 				<ul>
-					<li><a class="active" href="<?= url('guide'); ?>">Guides</a></li>
+					<li><a <?php if(preg_match('/^guide/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('guide'); ?>">Guides</a></li>
 					<li><a href="<?= url('api'); ?>">API</a></li>
 					<li><a href="<?= url('support'); ?>">Support</a></li>
-					<li><a href="<?= url('dashboard'); ?>">Log In</a></li>
+
+					<?php if(\Library\Auth::logged_in()): ?>
+						<li><a href="<?= url('dashboard'); ?>">Dashboard</a></li>
+						<li><a href="<?= url('auth/logout'); ?>">Log Out</a></li>
+					<?php else: ?>
+						<li><a <?php if(preg_match('/^auth\/login/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('dashboard'); ?>">Log In</a></li>
+					<?php endif; ?>
 				</ul>
 			</nav>
 		</header>

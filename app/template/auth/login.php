@@ -1,40 +1,38 @@
-<?php $this->base('admin/base_no_side'); ?>
+<?php $this->base('base'); ?>
 
 
 <!-- Title -->
-<?php $this->extend('title'); ?>Log In<?php $this->end_extend(); ?>
-
-
-<!-- Headline -->
-<?php $this->extend('header'); ?>Log In<?php $this->end_extend(); ?>
-
-
-<!-- Breadcrumbs -->
-<?php $this->extend('breadcrumbs'); ?>
-
-	<ul class="breadcrumb">
-		<li><a href="<?= url(); ?>">Home</a> <span class="divider">/</span></li>
-		<li class="active">Log In</li>
-	</ul>
-
-<?php $this->end_extend(); ?>
+<?php $this->set('title', 'Burner CMS - Log In'); ?>
 
 
 <!-- Content -->
 <?php $this->extend('content'); ?>
+
+	<h3>Log In</h3>
+
+	<hr class="line" />
 	
 	<form method="post" class="form-horizontal">
 
 		<?php if($invalid): ?><p>Invalid login credentials.</p><?php endif; ?>
 
-		<?php foreach($user->get_schema() as $column => $options): ?>
+		<?php if(isset($errors['email'])): ?>
+			<p><label><?= $errors['email']; ?></label></p>
+		<?php endif; ?>
+		<p>
+			<label>E-mail</label>
+			<input type="email" name="email" value="<?= e($user->email); ?>" required />
+		</p>
 
-			<?php $this->label($column); ?>
-			<?php $this->field($column, $user); ?>
-
-		<?php endforeach; ?>
+		<?php if(isset($errors['password'])): ?>
+			<p><label><?= $errors['password']; ?></label></p>
+		<?php endif; ?>
+		<p>
+			<label>Password</label>
+			<input type="password" name="password" required />
+		</p>
 		
-		<p><input type="submit" value="Login" class="btn btn-primary" /></p>
+		<input type="submit" value="Login" class="btn btn-primary" />
 
 	</form>
 
