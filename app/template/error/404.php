@@ -2,13 +2,13 @@
 
 
 <!-- Title -->
-<?php $this->set('title', 'Page Not Found'); ?>
+<?php $this->set('title', 'Burner CMS - Page Not Found'); ?>
 
 
 <!-- Content -->
 <?php $this->extend('content'); ?>
 	
-	<h2>Page not found</h2>
+	<h3>Page not found</h3>
 	
 	<p>Sorry, the requested page could not be found.</p>
 

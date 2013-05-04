@@ -2,13 +2,13 @@
 
 
 <!-- Title -->
-<?php $this->set('title', 'Access Denied'); ?>
+<?php $this->set('title', 'Burner CMS - Access Denied'); ?>
 
 
 <!-- Content -->
 <?php $this->extend('content'); ?>
 	
-	<h2>Access denied</h2>
+	<h3>Access denied</h3>
 	
 	<p>You do not have permission to access this resource.</p>
 
