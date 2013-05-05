@@ -12,7 +12,11 @@
 
 	<?php if(!empty($tickets)): ?>
 
-		<p>Showing all open tickets. <a href="<?= url('support/ticket/closed'); ?>">View closed</a>.</p>
+		<?php if($open): ?>
+			<p>Showing all open tickets. <a href="<?= url('support/ticket/closed'); ?>">View closed</a>.</p>
+		<?php else: ?>
+			<p>Showing all closed tickets. <a href="<?= url('support/ticket'); ?>">View open</a>.</p>
+		<?php endif; ?>
 
 		<p><a class="btn btn-primary" href="<?= url('support/ticket/create'); ?>">Create Ticket</a></p>
 
@@ -50,7 +54,11 @@
 
 	<?php else: ?>
 
-		<p>No open tickets found.</p>
+		<?php if($open): ?>
+			<p>No open tickets found. <a href="<?= url('support/ticket/closed'); ?>">View closed</a>.</p>
+		<?php else: ?>
+			<p>No closed tickets found. <a href="<?= url('support/ticket'); ?>">View open</a>.</p>
+		<?php endif; ?>
 
 		<p><a class="btn btn-primary" href="<?= url('support/ticket/create'); ?>">Create Ticket</a></p>
 

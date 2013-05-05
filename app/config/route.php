@@ -21,6 +21,7 @@ Route::add('App.Controller.Guide', array(
 Route::add('App.Controller.Ticket', array(
 
 	'GET:support/ticket' => 'open',
+	'GET:support/ticket/closed' => 'closed',
 	'GET:support/ticket/:int' => 'view'
 
 ));
