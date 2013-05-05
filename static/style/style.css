@@ -255,3 +255,26 @@ footer a {
 	color: #434344;
 	text-decoration: underline;
 }
+
+/* Table */
+table {
+	width: 100%;
+}
+
+table th, table td {
+	padding: 5px 10px;
+	text-align: left;
+}
+
+table th {
+	background: #EEEEEE;
+}
+
+table td {
+	font-size: 14px;
+	background: #FFFFFF;
+}
+
+table.table-bordered, table.table-bordered th:first-child, table.table-bordered td:first-child {
+	border-color: #A0A0A0;
+}
