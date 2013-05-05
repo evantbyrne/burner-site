@@ -101,7 +101,7 @@
 				<textarea name="content"><?= $content; ?></textarea>
 			</p>
 
-			<p><input class="btn btn-primary" type="submit" /></p>
+			<p><input class="btn btn-primary" type="submit" value="Post" /></p>
 
 		</form>
 

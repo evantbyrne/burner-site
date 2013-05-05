@@ -10,6 +10,8 @@ class Ticket extends \Core\Controller\Base {
 	public static $STATUS_ACCEPTED = 3;
 	public static $STATUS_COMPLETED = 4;
 
+	public static $PRIORITY_LOW = 1;
+
 	/**
 	 * Open
 	 */
@@ -115,6 +117,40 @@ class Ticket extends \Core\Controller\Base {
 		$this->data('user', $user);
 		$this->data('content', $content);
 		$this->data('error', $error);
+
+	}
+
+	/**
+	 * Create
+	 */
+	public function create() {
+
+		Auth::enforce();
+
+		if(is_post()) {
+
+			$ticket = \App\Model\Ticket::from_post(array('title', 'ticket_type', 'content'));
+			$ticket->user = Auth::current_user()->id;
+			$ticket->ticket_status = self::$STATUS_OPEN;
+			$ticket->ticket_priority = self::$PRIORITY_LOW;
+			
+			if($this->valid($ticket)) {
+
+				$id = $ticket->save();
+				redirect("support/ticket/$id");
+
+			}
+
+		} else {
+
+			$this->data('title', null);
+			$this->data('ticket_type', null);
+			$this->data('content', null);
+
+		}
+
+		$ticket_types = \App\Model\Ticket_Type::select()->order_asc('id')->fetch();
+		$this->data('ticket_types', $ticket_types);
 
 	}
 
