@@ -14,5 +14,26 @@ class User extends \Library\Auth\Model\MultipleGroups {
 	 * @option unique = Display name already taken. Please choose another.
 	 */
 	public $display_name;
+
+	/**
+	 * @option type = HasMany
+	 * @option model = Order
+	 * @option column = user
+	 */
+	public $orders;
+
+	/**
+	 * @option type = HasMany
+	 * @option model = Ticket
+	 * @option column = user
+	 */
+	public $tickets;
+
+	/**
+	 * @option type = HasMany
+	 * @option model = Ticket_Comment
+	 * @option column = user
+	 */
+	public $ticket_comments;
 	
 }
