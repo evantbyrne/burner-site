@@ -9,7 +9,6 @@
 <?php $this->extend('content'); ?>
 
 	<h3>Log In</h3>
-
 	<hr class="line" />
 	
 	<form method="post" class="form-horizontal">
@@ -35,5 +34,11 @@
 		<input type="submit" value="Login" class="btn btn-primary" />
 
 	</form>
+	<hr/>
+
+	<h3>Register</h3>
+	<hr class="line" />
+
+	<p>Don't have an account yet? Then <a href="<?= url(($redirect !== false) ? "auth/register/$redirect" : 'auth/register'); ?>">create one</a>.</p>
 
 <?php $this->end_extend(); ?>

@@ -35,7 +35,15 @@ Route::add('App.Controller.Ticket', array(
 ));
 
 // Authentication
-Route::vendor('auth');
+Route::add('App.Controller.Auth', array(
+
+	'BOTH:auth/register' => 'register',
+	'BOTH:auth/register/:any' => 'register',
+	'BOTH:auth/login' => 'login',
+	'BOTH:auth/login/:any' => 'login',
+	'GET:auth/logout' => 'logout'
+
+));
 
 // Admin
 Route::vendor('admin');
