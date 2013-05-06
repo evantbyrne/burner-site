@@ -17,6 +17,13 @@ Route::add('App.Controller.Guide', array(
 
 ));
 
+// Support
+Route::add('App.Controller.Support', array(
+
+	'GET:support' => 'index'
+
+));
+
 // Issue Tracker
 Route::add('App.Controller.Ticket', array(
 

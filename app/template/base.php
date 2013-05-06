@@ -38,7 +38,7 @@
 				<ul>
 					<li><a <?php if(preg_match('/^guide/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('guide'); ?>">Guides</a></li>
 					<li><a href="<?= url('api'); ?>">API</a></li>
-					<li><a href="<?= url('support'); ?>">Support</a></li>
+					<li><a <?php if(preg_match('/^support/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('support'); ?>">Support</a></li>
 
 					<?php if(\Library\Auth::logged_in()): ?>
 						<li><a href="<?= url('dashboard'); ?>">Dashboard</a></li>
