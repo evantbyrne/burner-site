@@ -12,7 +12,7 @@ Route::add('App.Controller.Main', array(
 // Support
 Route::add('App.Controller.Order', array(
 
-	'BOTH:order' => 'index'
+	'GET:order' => 'index'
 
 ));
 

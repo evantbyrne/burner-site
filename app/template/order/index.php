@@ -23,6 +23,7 @@
 			<li>Access to all future versions</li>
 			<li>Basic Support</li>
 			<li>No DRM</li>
+			<li>&nbsp;</li>
 		</ul>
 		<div class="pt-btn"><a class="btn btn-large" href="<?= url('order/license/1'); ?>">Purchase</a></div>
 	</div>
@@ -36,6 +37,7 @@
 			<li>Access to all future versions</li>
 			<li>Basic Support</li>
 			<li>No DRM</li>
+			<li>&nbsp;</li>
 		</ul>
 		<div class="pt-btn"><a class="btn btn-large btn-success" href="<?= url('order/license/2'); ?>">Purchase</a></div>
 	</div>

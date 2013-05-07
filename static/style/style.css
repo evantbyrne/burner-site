@@ -326,7 +326,7 @@ div.pt div.pt-btn {
 	text-align: center;
 }
 
-div.pt-left {
+div.pt-left, div.pt-right {
 	margin-top: 15px;
 }
 
