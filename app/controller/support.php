@@ -9,4 +9,9 @@ class Support extends \Core\Controller\Base {
 	 */
 	public function index() {}
 
+	/**
+	 * License
+	 */
+	public function license() {}
+
 }

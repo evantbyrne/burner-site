@@ -3,7 +3,7 @@
 namespace App\Model;
 
 /**
- * @option admin_list = user, total, country
+ * @option admin_list = user, total
  */
 class Order extends \Core\Model\Base {
 
@@ -39,46 +39,6 @@ class Order extends \Core\Model\Base {
 	 * @option length = 255
 	 */
 	public $stripe_token;
-
-	/**
-	 * @option type = Varchar
-	 * @option length = 100
-	 * @option required = Full name field is required.
-	 */
-	public $name;
-
-	/**
-	 * @option type = BelongsTo
-	 * @option required = Country field is required.
-	 */
-	public $country;
-
-	/**
-	 * @option type = Varchar
-	 * @option length = 50
-	 * @option required = State field is required.
-	 */
-	public $state;
-
-	/**
-	 * @option type = Varchar
-	 * @option length = 255
-	 * @option required = Address field is required.
-	 */
-	public $address;
-
-	/**
-	 * @option type = Varchar
-	 * @option length = 255
-	 */
-	public $address2;
-
-	/**
-	 * @option type = Char
-	 * @option length = 5
-	 * @option required = Zip code field is required.
-	 */
-	public $zip_code;
 
 	/**
 	 * @option type = HasMany

@@ -9,6 +9,13 @@ Route::add('App.Controller.Main', array(
 
 ));
 
+// Support
+Route::add('App.Controller.Order', array(
+
+	'BOTH:order' => 'index'
+
+));
+
 // Guide
 Route::add('App.Controller.Guide', array(
 
@@ -20,7 +27,8 @@ Route::add('App.Controller.Guide', array(
 // Support
 Route::add('App.Controller.Support', array(
 
-	'GET:support' => 'index'
+	'GET:support' => 'index',
+	'GET:support/license' => 'license'
 
 ));
 

@@ -22,8 +22,23 @@ class License_Type extends \Core\Model\Base {
 	public $price;
 
 	/**
+	 * @option type = Int
+	 * @option required = Quantity field is required.
+	 */
+	public $quantity;
+
+	/**
 	 * @option type = Boolean
-	 * @option required = Enabled field is required.
+	 */
+	public $future_version_access;
+
+	/**
+	 * @option type = Boolean
+	 */
+	public $git_access;
+
+	/**
+	 * @option type = Boolean
 	 */
 	public $enabled;
 
