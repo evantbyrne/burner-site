@@ -334,3 +334,25 @@ div.pt-middle {
 	z-index: 55;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
+
+@media all and (max-width: 960px) {
+	div.pt {
+		width: 33%;
+	}
+}
+
+@media all and (max-width: 751px) {
+	div.pt {
+		float: none;
+		margin: 0 auto 15px auto;
+		padding-bottom: 1px;
+		width: 320px;
+	}
+}
+
+
+@media all and (max-width: 360px) {
+	div.pt {
+		width: auto;
+	}
+}
