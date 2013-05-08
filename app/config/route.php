@@ -12,7 +12,8 @@ Route::add('App.Controller.Main', array(
 // Support
 Route::add('App.Controller.Order', array(
 
-	'GET:order' => 'index'
+	'GET:order' => 'index',
+	'BOTH:order/license/:int' => 'license'
 
 ));
 

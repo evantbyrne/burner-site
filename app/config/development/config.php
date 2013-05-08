@@ -51,3 +51,7 @@ Config::set('session', array(
 	'path'   => '/',
 	'expire' => '+1 months'
 ));
+
+// Stripe
+Config::set('stripe_secret', 'sk_test_U6Onx3S4XAwQSBbM3z0jkrN2');
+Config::set('stripe_public', 'pk_test_zvJs9r0hWZbfU3H15QK3IJ6u');

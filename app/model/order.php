@@ -38,7 +38,7 @@ class Order extends \Core\Model\Base {
 	 * @option type = Varchar
 	 * @option length = 255
 	 */
-	public $stripe_token;
+	public $stripe_id;
 
 	/**
 	 * @option type = HasMany
@@ -53,7 +53,7 @@ class Order extends \Core\Model\Base {
 	 */
 	public function __toString() {
 
-		return date('j M, Y - g:ia', $this->sale_timestamp) . " - {$this->name}";
+		return date('j M, Y - g:ia', $this->sale_timestamp);
 
 	}
 

@@ -33,7 +33,7 @@
 		<div class="pt-price">$30</div>
 		<ul class="pt-features">
 			<li>1 Site License</li>
-			<li>1 User GIT Read Access</li>
+			<li>1 User Git Read Access</li>
 			<li>Access to all future versions</li>
 			<li>Basic Support</li>
 			<li>No DRM</li>
@@ -43,11 +43,11 @@
 	</div>
 
 	<div class="pt pt-right">
-		<div class="pt-title">Triple</div>
-		<div class="pt-price">$65</div>
+		<div class="pt-title">Double</div>
+		<div class="pt-price">$50</div>
 		<ul class="pt-features">
-			<li>3 Site Licenses</li>
-			<li>1 User GIT Read Access</li>
+			<li>2 Site Licenses</li>
+			<li>1 User Git Read Access</li>
 			<li>Access to all future versions</li>
 			<li>Basic Support</li>
 			<li>No DRM</li>
@@ -69,9 +69,9 @@
 	<p>All beta license purchasers will be allowed to download and use future releases of Burner CMS.</p>
 	<hr/>
 
-	<h3>GIT Read Access</h3>
+	<h3>Git Read Access</h3>
 	<hr class="line" />
-	<p>The "First Class" and "Triple" packages grant you read access to Burner CMS's development GIT repository, so
+	<p>The "First Class" and "Double" packages grant you read access to Burner CMS's development Git repository, so
 		that you can always be on top of the latest changes and additions.</p>
 	<hr/>
 
