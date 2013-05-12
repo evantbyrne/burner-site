@@ -45,6 +45,9 @@
 			<textarea name="content"><?= $content; ?></textarea>
 		</p>
 
+		<p>Supports <a target="_blank" href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>
+			paragraphs, bold, italics, links, and code blocks. Indent code blocks with four spaces.</p>
+
 		<p><input class="btn btn-primary" type="submit" value="Save" /></p>
 
 	</form>

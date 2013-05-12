@@ -110,6 +110,22 @@ class Ticket extends \Core\Controller\Base {
 
 		}
 
+		// Set up autoloading for markdown and HTMLPurifier libraries
+		\Core\Autoload::set('/^Michelf/', function() {
+
+			return 'michelf/Markdown.php';
+
+		});
+
+		\Core\Autoload::set('/^HTMLPurifier/', function() {
+
+			return 'htmlpurifier/HTMLPurifier.standalone.php';
+
+		});
+
+		// Format ticket content as markdown
+		$ticket->content = $this->format($ticket->content);
+
 		$this->data('ticket', $ticket);
 		$this->data('comments', $comments);
 		$this->data('is_user', $is_user);
@@ -169,6 +185,28 @@ class Ticket extends \Core\Controller\Base {
 			->inner_join('ticket_type', 'ticket_type.id', '=', 'ticket.ticket_type')
 			->inner_join('ticket_status', 'ticket_status.id', '=', 'ticket.ticket_status')
 			->inner_join('ticket_priority', 'ticket_priority.id', '=', 'ticket.ticket_priority');
+
+	}
+
+	/**
+	 * Format
+	 * @param string Markdown
+	 * @return string Clean HTML
+	 */
+	private function format($text) {
+
+		$html = \Michelf\Markdown::defaultTransform($text);
+		$html = str_replace('<code>', '', $html);
+		$html = str_replace('</code>', '', $html);
+
+		$config = \HTMLPurifier_Config::createDefault();
+		$config->set('HTML.Allowed', 'p,strong,em,a[href],pre');
+		$config->set('AutoFormat.AutoParagraph', true);
+		$purifier = new \HTMLPurifier($config);
+		$html = $purifier->purify($html);
+
+		$html = str_replace('<pre>', '<pre class="prettyprint">', $html);
+		return $html;
 
 	}
 

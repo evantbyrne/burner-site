@@ -44,7 +44,7 @@
 		</tbody>
 	</table>
 
-	<p><?= e($ticket->content); ?></p>
+	<?= $ticket->content; ?>
 
 	<h3>Comments (<?= count($comments); ?>)</h3>
 
