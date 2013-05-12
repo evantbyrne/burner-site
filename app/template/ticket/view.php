@@ -9,12 +9,14 @@
 <?php $this->extend('content'); ?>
 
 	<h3>Ticket #<?= $ticket->id; ?>: <?= e($ticket->title); ?></h3>
+	<hr class="line" />
 	
-	<?php if($is_admin): ?>
-		<p><a class="btn" href="<?= url("admin/ticket/{$ticket->id}"); ?>">Edit</a></p>
-	<?php else: ?>
-		<hr/>
-	<?php endif; ?>
+	<p>
+		<a class="btn" href="<?= url('support/ticket'); ?>">Issues Index</a>
+		<?php if($is_admin): ?>
+			<a class="btn" href="<?= url("admin/ticket/{$ticket->id}"); ?>">Edit</a>
+		<?php endif; ?>
+	</p>
 
 	<table class="table-bordered">
 		<thead>

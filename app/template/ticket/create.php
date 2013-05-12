@@ -11,6 +11,8 @@
 	<h3>Create Ticket</h3>
 	<hr class="line" />
 
+	<p><a class="btn" href="<?= url('support/ticket'); ?>">Issues Index</a></p>
+
 	<form method="post">
 
 		<?php if(isset($errors['title'])): ?>

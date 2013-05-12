@@ -9,6 +9,7 @@
 <?php $this->extend('content'); ?>
 
 	<h3>Issue Tracker</h3>
+	<hr class="line" />
 
 	<?php if(!empty($tickets)): ?>
 
