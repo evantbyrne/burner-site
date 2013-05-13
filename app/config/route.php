@@ -25,6 +25,13 @@ Route::add('App.Controller.Guide', array(
 
 ));
 
+// Users
+Route::add('App.Controller.User', array(
+
+	'GET:dashboard' => 'dashboard'
+
+));
+
 // Support
 Route::add('App.Controller.Support', array(
 

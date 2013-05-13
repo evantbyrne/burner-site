@@ -46,7 +46,7 @@
 					<li><a <?php if(preg_match('/^support/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('support'); ?>">Support</a></li>
 
 					<?php if(\Library\Auth::logged_in()): ?>
-						<li><a href="<?= url('dashboard'); ?>">Dashboard</a></li>
+						<li><a <?php if(CURRENT_PAGE === 'dashboard'): ?>class="active" <?php endif; ?>href="<?= url('dashboard'); ?>">Dashboard</a></li>
 						<li><a href="<?= url('auth/logout'); ?>">Log Out</a></li>
 					<?php else: ?>
 						<li><a <?php if(preg_match('/^auth\/login/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('dashboard'); ?>">Log In</a></li>
