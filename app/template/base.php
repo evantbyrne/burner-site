@@ -51,6 +51,8 @@
 					<?php else: ?>
 						<li><a <?php if(preg_match('/^auth\/login/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('dashboard'); ?>">Log In</a></li>
 					<?php endif; ?>
+
+					<li><a <?php if(preg_match('/^order/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('order'); ?>">Purchase</a></li>
 				</ul>
 			</nav>
 		</header>
