@@ -14,6 +14,7 @@ Route::add('App.Controller.Order', array(
 
 	'GET:order' => 'index',
 	'BOTH:order/license/:int' => 'license',
+	'GET:order/complete' => 'complete',
 	'GET:order/download' => 'download'
 
 ));

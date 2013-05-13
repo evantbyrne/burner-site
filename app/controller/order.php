@@ -3,6 +3,7 @@
 namespace App\Controller;
 use Library\Auth;
 use Library\Input;
+use Library\Session;
 use Core\Config;
 
 class Order extends \Core\Controller\Base {
@@ -19,9 +20,7 @@ class Order extends \Core\Controller\Base {
 	public function license($id) {
 
 		$license_type = \App\Model\License_Type::id($id) or $this->error(404);
-		Auth::enforce();
-
-		$user = Auth::current_user();
+		$user = $this->enforce_user();
 
 		if(is_post()) {
 
@@ -73,7 +72,7 @@ class Order extends \Core\Controller\Base {
 				'sale_timestamp' => $time));
 			$license->save();
 
-			redirect('dashboard');
+			redirect('order/complete');
 
 		} else {
 
@@ -87,12 +86,26 @@ class Order extends \Core\Controller\Base {
 	}
 
 	/**
+	 * Complete
+	 */
+	public function complete() {
+
+		$user = $this->enforce_user();
+		$orders = \App\Model\Order::select()->where('user', '=', $user->id)->fetch();
+		if(empty($orders)) {
+
+			redirect('dashboard');
+
+		}
+
+	}
+
+	/**
 	 * Download
 	 */
 	public function download() {
 
-		Auth::enforce();
-		$user = Auth::current_user();
+		$user = $this->enforce_user();
 		$orders = \App\Model\Order::select()->where('user', '=', $user->id)->fetch();
 
 		if(!empty($orders)) {
@@ -112,6 +125,34 @@ class Order extends \Core\Controller\Base {
 			exit();
 
 		}
+
+	}
+
+	/**
+	 * Enforce User
+	 * @return App\Model\User
+	 */
+	private function enforce_user() {
+
+		if(Auth::logged_in()) {
+
+			return Auth::current_user();
+
+		}
+
+		$user_id = Session::get('registered_user');
+		if($user_id !== null) {
+
+			$user = \App\Model\User::id($user_id);
+			if($user !== null) {
+
+				return $user;
+
+			}
+
+		}
+
+		login_redirect(CURRENT_PAGE);
 
 	}
 	

@@ -16,6 +16,16 @@ class Auth extends \App\Vendor\Auth\Controller\Auth {
 	}
 
 	/**
+	 * Log Out
+	 */
+	public function logout() {
+
+		\Library\Session::delete('registered_user');
+		parent::logout();
+
+	}
+
+	/**
 	 * Register
 	 * @param string Relative redirect URL (base64 encoded)
 	 */
@@ -31,6 +41,9 @@ class Auth extends \App\Vendor\Auth\Controller\Auth {
 			if(!is_array($errors)) {
 
 				$id = $user->save();
+
+				\Library\Session::set('registered_user', $id);
+
 				mail($user->email, 'Burner CMS Registration', "Thank you for registering!\n\n" .
 					"Your temporary password is: $clear_pass\n\n" .
 					"Make sure that you log into your new account and change the password as soon as possible.");
