@@ -55,3 +55,6 @@ Config::set('session', array(
 // Stripe
 Config::set('stripe_secret', 'sk_test_U6Onx3S4XAwQSBbM3z0jkrN2');
 Config::set('stripe_public', 'pk_test_zvJs9r0hWZbfU3H15QK3IJ6u');
+
+// Burner release
+Config::set('burner_download_path', 'release/burner-cms.zip');

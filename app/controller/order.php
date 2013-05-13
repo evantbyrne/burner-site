@@ -85,5 +85,34 @@ class Order extends \Core\Controller\Base {
 		$this->data('stripe_public', Config::get('stripe_public'));
 
 	}
+
+	/**
+	 * Download
+	 */
+	public function download() {
+
+		Auth::enforce();
+		$user = Auth::current_user();
+		$orders = \App\Model\Order::select()->where('user', '=', $user->id)->fetch();
+
+		if(!empty($orders)) {
+
+			$file_name = Config::get('burner_download_path');
+			header('Pragma: public'); // required
+			header('Expires: 0'); // no cache
+			header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+			header('Last-Modified: ' . gmdate ('D, d M Y H:i:s', filemtime ($file_name)) . ' GMT');
+			header('Cache-Control: private', false);
+			header('Content-Type: application/zip');
+			header('Content-Disposition: attachment; filename="' . basename($file_name) . '"');
+			header('Content-Transfer-Encoding: binary');
+			header('Content-Length: ' . filesize($file_name));
+			header('Connection: close');
+			readfile($file_name);
+			exit();
+
+		}
+
+	}
 	
 }

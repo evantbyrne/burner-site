@@ -13,7 +13,8 @@ Route::add('App.Controller.Main', array(
 Route::add('App.Controller.Order', array(
 
 	'GET:order' => 'index',
-	'BOTH:order/license/:int' => 'license'
+	'BOTH:order/license/:int' => 'license',
+	'GET:order/download' => 'download'
 
 ));
 
