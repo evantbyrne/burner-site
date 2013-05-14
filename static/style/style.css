@@ -35,7 +35,7 @@ h3 {
 	font: 24px bold 'Montserrat', sans-serif;
 }
 
-p, pre {
+p, pre, ul.padded {
 	margin: 10px 0 20px 0;
 }
 
@@ -380,4 +380,29 @@ div.pt-middle {
 	div.pt {
 		width: auto;
 	}
+}
+
+/* API */
+.api {
+	margin: 10px 0 20px 0;
+	border: 1px solid #CCCCCC;
+	background: #FFFFFF;
+}
+
+.api h3, .api h4, .api ul {
+	margin: 0;
+	padding: 10px;
+	font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: normal;
+}
+
+.api h4 {
+	border-top: 1px solid #CCCCCC;
+	font-weight: bold;
+}
+
+.api ul {
+	padding: 0 10px 10px 10px;
 }

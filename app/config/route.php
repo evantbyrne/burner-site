@@ -27,6 +27,14 @@ Route::add('App.Controller.Guide', array(
 
 ));
 
+// API
+Route::add('App.Controller.Api', array(
+
+	'GET:api' => 'index',
+	'GET:api/:any/:any' => 'view'
+
+));
+
 // Users
 Route::add('App.Controller.User', array(
 
