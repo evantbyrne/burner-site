@@ -31,6 +31,7 @@ Route::add('App.Controller.Guide', array(
 Route::add('App.Controller.Api', array(
 
 	'GET:api' => 'index',
+	'GET:api/:any' => 'index',
 	'GET:api/:any/:any' => 'view'
 
 ));

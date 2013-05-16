@@ -17,6 +17,8 @@
 
 	<?php endif; ?>
 
+	<p><a class="btn" href="<?= ($version_name === 'latest') ? url('api') : url("api/$version_name"); ?>">API Index</a></p>
+
 
 	<h3 id="methods">Methods</h3>
 	<hr class="line" />
