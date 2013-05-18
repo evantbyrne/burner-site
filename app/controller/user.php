@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 use Library\Auth;
+use Library\Input;
 
 class User extends \Core\Controller\Base {
 
@@ -40,6 +41,40 @@ class User extends \Core\Controller\Base {
 		$this->data('user', $user);
 		$this->data('licenses', $licenses);
 		$this->data('tickets', $tickets);
+
+	}
+
+	/**
+	 * Change Password
+	 */
+	public function change_password() {
+
+		Auth::enforce();
+		$error = false;
+		$success = false;
+
+		if(is_post()) {
+
+			$pass = Input::post('password');
+			$conf = Input::post('password_confirmation');
+
+			if(!empty($pass) and !empty($conf) and $pass === $conf) {
+
+				$user = Auth::current_user();
+				$user->password = Auth::hash($pass);
+				$user->save();
+				$success = true;
+
+			} else {
+
+				$error = true;
+
+			}
+
+		}
+
+		$this->data('error', $error);
+		$this->data('success', $success);
 
 	}
 	

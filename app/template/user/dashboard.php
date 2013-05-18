@@ -13,6 +13,7 @@
 
 	<p>Here you can find all of the licenses that belong to this account (<?= e($user->email); ?>).</p>
 	<p>
+		<a class="btn" href="<?= url('user/change_password'); ?>">Change Password</a>
 		<a class="btn" href="<?= url('order'); ?>">Get Licenses</a>
 
 		<?php if(!empty($licenses)): ?>
@@ -58,7 +59,6 @@
 		<p>No registered licenses.</p>
 
 	<?php endif; ?>
-
 
 	<hr/>
 

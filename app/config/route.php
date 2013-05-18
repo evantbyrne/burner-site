@@ -39,7 +39,8 @@ Route::add('App.Controller.Api', array(
 // Users
 Route::add('App.Controller.User', array(
 
-	'GET:dashboard' => 'dashboard'
+	'GET:dashboard' => 'dashboard',
+	'BOTH:user/change_password' => 'change_password'
 
 ));
 
