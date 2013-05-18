@@ -9,6 +9,7 @@
 <?php $this->extend('content'); ?>
 
 	<h3><?= e($guide->title); ?></h3>
+	<hr class="line" />
 
 	<?= $guide->content; ?>
 	
