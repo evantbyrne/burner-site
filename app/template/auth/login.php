@@ -10,6 +10,9 @@
 
 	<h3>Log In</h3>
 	<hr class="line" />
+
+	<p>This action requires that you to have a burnercms.com account.<br/>
+		When you are done here we'll direct you back to where you came from.</p>
 	
 	<form method="post" class="form-horizontal">
 
