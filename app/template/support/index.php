@@ -20,11 +20,11 @@
 
 	<h3>E-Mail</h3>
 	<p>If you have questions or concerns, please feel free to e-mail us directly at
-		<a href="mailto:<?= EMAIL; ?>">burnercms@gmail.com</a>. You may also
+		<a href="mailto:<?= \Core\Config::get('email'); ?>"><?= \Core\Config::get('email'); ?></a>. You may also
 		contact us on <a target="_blank" href="https://twitter.com/burnercms">Twitter</a>
 		if you would like. However, for lengthier requests it's best to contact us via
 		e-mail.</p>
 
-	<p><a class="btn" href="mailto:<?= EMAIL; ?>">E-Mail Us</a></p>
+	<p><a class="btn" href="mailto:<?= \Core\Config::get('email'); ?>">E-Mail Us</a></p>
 	
 <?php $this->end_extend(); ?>
