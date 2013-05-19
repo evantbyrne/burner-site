@@ -53,14 +53,14 @@ Route::add('App.Controller.Support', array(
 ));
 
 // Issue Tracker
-Route::add('App.Controller.Ticket', array(
+/*Route::add('App.Controller.Ticket', array(
 
 	'GET:support/ticket' => 'open',
 	'GET:support/ticket/closed' => 'closed',
 	'BOTH:support/ticket/:int' => 'view',
 	'BOTH:support/ticket/create' => 'create'
 
-));
+));*/
 
 // Authentication
 Route::add('App.Controller.Auth', array(
