@@ -59,5 +59,43 @@
 		<p>No registered licenses.</p>
 
 	<?php endif; ?>
+
+	<hr/>
+
+
+	<h3>Git Access</h3>
+
+	<?php if(!empty($gits)): ?>
+
+		<hr/>
+		<table class="table-bordered">
+			<thead>
+				<tr>
+					<th>E-Mail</th>
+					<th>Completed</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<?php foreach($gits as $git): ?>
+
+					<tr>
+						<td><?= e($git->email); ?></td>
+						<td><i class="icon-<?= ($git->completed) ? 'ok-sign' : 'remove-circle'; ?>"></i></td>
+					</tr>
+
+				<?php endforeach; ?>
+
+			</tbody>
+		</table>
+		<hr/>
+
+	<?php endif; ?>
+
+	<p>Git activations available to you: <?= e($available_git); ?></p>
+
+	<?php if($available_git > 0): ?>
+		<p><a class="btn" href="<?= url('user/request_git'); ?>">Request Access</a></p>
+	<?php endif; ?>
 	
 <?php $this->end_extend(); ?>

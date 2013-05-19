@@ -59,3 +59,6 @@ Config::set('stripe_public', 'pk_test_zvJs9r0hWZbfU3H15QK3IJ6u');
 
 // Burner release
 Config::set('burner_download_path', 'release/burner-cms.zip');
+
+// Email
+Config::set('email', 'burnercms@gmail.com');

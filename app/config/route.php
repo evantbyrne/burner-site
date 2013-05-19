@@ -40,7 +40,9 @@ Route::add('App.Controller.Api', array(
 Route::add('App.Controller.User', array(
 
 	'GET:dashboard' => 'dashboard',
-	'BOTH:user/change_password' => 'change_password'
+	'BOTH:user/change_password' => 'change_password',
+	'BOTH:user/request_git' => 'request_git',
+	'GET:user/request_git/confirm/:int' => 'request_git_confirm'
 
 ));
 
