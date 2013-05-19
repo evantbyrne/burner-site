@@ -46,7 +46,8 @@ class Auth extends \App\Vendor\Auth\Controller\Auth {
 
 				mail($user->email, 'Burner CMS Registration', "Thank you for registering!\n\n" .
 					"Your temporary password is: $clear_pass\n\n" .
-					"Make sure that you log into your new account and change the password as soon as possible.");
+					"Make sure that you log into your new account and change the password as soon as possible.",
+					'From: ' . \Core\Config::get('email'))););
 
 				$this->template('auth/register_success');
 				$this->data('redirect', $redirect);
