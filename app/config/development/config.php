@@ -40,7 +40,7 @@ Config::set('admin_models', array(
 	'Users' => array('user', 'group', 'membership'),
 	'Guides' => array('guidecategory', 'guide'),
 	'Tickets' => array('ticket', 'ticket_type', 'ticket_priority', 'ticket_status', 'ticket_comment'),
-	'Licenses' => array('order', 'license', 'license_type'),
+	'Licenses' => array('order', 'license', 'license_type', 'license_git'),
 	'API' => array('api_version', 'api_class', 'api_property', 'api_method')
 ));
 
