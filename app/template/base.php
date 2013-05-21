@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="<?= url('static/style/bootstrap/css/bootstrap.min.css'); ?>" />
 		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" type="image/x-icon" href="<?= url('static/style/burner.ico'); ?>" />
 
 		<!--[if lt IE 9]>
 			<script>
