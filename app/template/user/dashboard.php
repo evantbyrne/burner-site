@@ -32,8 +32,8 @@
 			<thead>
 				<tr>
 					<th>Name</th>
-					<th>Sale Price</th>
 					<th>Licenses</th>
+					<th>Sale Price</th>
 					<th>Date</th>
 				</tr>
 			</thead>
