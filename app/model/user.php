@@ -21,19 +21,5 @@ class User extends \Library\Auth\Model\MultipleGroups {
 	 * @option column = user
 	 */
 	public $orders;
-
-	/**
-	 * @option type = HasMany
-	 * @option model = Ticket
-	 * @option column = user
-	 */
-	public $tickets;
-
-	/**
-	 * @option type = HasMany
-	 * @option model = Ticket_Comment
-	 * @option column = user
-	 */
-	public $ticket_comments;
 	
 }
