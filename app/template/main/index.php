@@ -19,7 +19,7 @@
 			<h3>Simple</h3>
 			<p>Getting a site setup is quick and easy for any developer familiar with the
 				MVC design pattern. Don't take our word for it though; go check out the
-				first <a target="_blank" href="http://bekr.me/burner-tutorial">tutorial</a>.</p>
+				first <a href="<?= url('guide/tutorial-photo-gallery'); ?>">tutorial</a>.</p>
 		</div>
 		<div class="item">
 			<h3>Made for Data</h3>
@@ -41,7 +41,7 @@
 		<div class="item">
 			<h3>Documented</h3>
 			<p>Unlike most commercial software, Burner is fully documented. In addition to the
-				easy-to-follow guides, the entire <a href="<?= url('api'); ?>">API</a> is
+				easy-to-follow <a href="<?= url('guide'); ?>">guides</a>, the entire <a href="<?= url('api'); ?>">API</a> is
 				documented as well.</p>
 		</div>
 		<div class="item end">
