@@ -111,7 +111,7 @@ class User extends \Core\Controller\Base {
 
 				mail(\Core\Config::get('email'), 'Burner CMS Git Request',
 					"E-mail: {$git->email}\n\n" .
-					"Send notification: " . url("request_git/confirm/{$git->id}",
+					"Send notification: " . url("user/request_git/confirm/{$git->id}",
 					'From: ' . \Core\Config::get('email')));
 
 				$this->template('user/request_git_success');
