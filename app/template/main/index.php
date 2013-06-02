@@ -58,7 +58,6 @@
 	<div class="sub-tagline">
 
 		<h3>1. Define Models</h3>
-
 		<pre class="prettyprint lang-php">namespace App\Model;
 
 class Photo extends \Core\Model\Base {
@@ -94,18 +93,18 @@ class Photo extends \Core\Model\Base {
 }</pre>
 
 		<h3>2. Enable Admin</h3>
-
 		<pre class="prettyprint lang-php">Config::set('admin_models', array(
 	'Users' =&gt; array('user', 'group', 'membership'),
 	'Gallery' =&gt; array('photo')
 );</pre>
 
 		<h3>3. Manage</h3>
-
 		<img class="full" src="<?= url('static/tutorial/list.png'); ?>" />
 
-		<p>Why wait? <a href="<?= url('order'); ?>">Support Burner CMS</a></p>
+	</div>
 
+	<div class="tagline">
+		<a class="buy" href="<?= url('order'); ?>">Buy Now &mdash; 75% Off For Beta!</a>
 	</div>
 	
 <?php $this->end_extend(); ?>
