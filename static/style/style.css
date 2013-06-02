@@ -45,6 +45,14 @@ pre, code {
 	line-height: 18px;
 }
 
+pre {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
 code {
 	font-weight: bold;
 }
@@ -167,7 +175,7 @@ header nav a:hover, header nav a.active {
 
 
 /* Tagline */
-div.tagline {
+div.tagline{
 	display: block;
 	text-align: center;
 }
@@ -195,6 +203,21 @@ div.tagline a.buy:active {
 	background: #4AAF8F;
 }
 
+div.sub-tagline {
+	margin: 0 auto 40px auto;
+	width: 840px;
+}
+
+div.sub-tagline h3 {
+	margin: 40px 0 20px 0;
+}
+
+@media all and (max-width: 960px) {
+	div.sub-tagline {
+		width: 100%;
+	}
+}
+
 @media all and (max-width: 840px) {
 	div.tagline h2 {
 		font-size: 36px;
@@ -213,6 +236,7 @@ div.grid {
 	padding-top: 30px;
 	width: 840px;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 div.item {

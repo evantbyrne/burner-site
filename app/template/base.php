@@ -7,7 +7,7 @@
 
 		<title><?php $this->section('title'); ?>Burner CMS<?php $this->end_section(); ?></title>
 
-		<link rel="stylesheet" type="text/css" href="<?= url('static/style/style.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= url('static/style/style.css?v=2'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?= url('static/style/bootstrap/css/bootstrap.min.css'); ?>" />
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>

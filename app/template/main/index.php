@@ -54,5 +54,58 @@
 		<div class="clear"></div>
 
 	</div>
+
+	<div class="sub-tagline">
+
+		<h3>1. Define Models</h3>
+
+		<pre class="prettyprint lang-php">namespace App\Model;
+
+class Photo extends \Core\Model\Base {
+	
+	/**
+	 * @option type = Image
+	 * @option required = Image field is required.
+	 */
+	public $image;
+
+	/**
+	 * @option type = Varchar
+	 * @option length = 100
+	 * @option required = Title field is required.
+	 */
+	public $title;
+
+	/**
+	 * @option type = Text
+	 */
+	public $description;
+
+	/**
+	 * Image Path
+	 * @return string
+	 */
+	public function image_path() {
+
+		return "static/photo/{$this->id}";
+
+	}
+
+}</pre>
+
+		<h3>2. Enable Admin</h3>
+
+		<pre class="prettyprint lang-php">Config::set('admin_models', array(
+	'Users' =&gt; array('user', 'group', 'membership'),
+	'Gallery' =&gt; array('photo')
+);</pre>
+
+		<h3>3. Manage</h3>
+
+		<img class="full" src="<?= url('static/tutorial/list.png'); ?>" />
+
+		<p>Why wait? <a href="<?= url('order'); ?>">Support Burner CMS</a></p>
+
+	</div>
 	
 <?php $this->end_extend(); ?>
