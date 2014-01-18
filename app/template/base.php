@@ -49,11 +49,9 @@
 					<?php if(\Library\Auth::logged_in()): ?>
 						<li><a <?php if(CURRENT_PAGE === 'dashboard'): ?>class="active" <?php endif; ?>href="<?= url('dashboard'); ?>">Dashboard</a></li>
 						<li><a href="<?= url('auth/logout'); ?>">Log Out</a></li>
-					<?php else: ?>
-						<li><a <?php if(preg_match('/^auth\/login/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('dashboard'); ?>">Log In</a></li>
 					<?php endif; ?>
 
-					<li><a <?php if(preg_match('/^order/', CURRENT_PAGE)): ?>class="active" <?php endif; ?>href="<?= url('order'); ?>">Purchase</a></li>
+					<li><a href="https://github.com/evantbyrne/burner">Github</a></li>
 				</ul>
 			</nav>
 		</header>

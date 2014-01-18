@@ -15,7 +15,7 @@
 	<p>If you have a bug to report, then this is the place to go. You can also
 		request new features or suggest optimizations here.</p>
 
-	<p><a class="btn" target="_blank" href="https://github.com/evantbyrne/burner-issues/issues?state=open">Issue Tracker</a></p>
+	<p><a class="btn" target="_blank" href="https://github.com/evantbyrne/burner/issues">Issue Tracker</a></p>
 	<hr/>
 
 	<h3>E-Mail</h3>

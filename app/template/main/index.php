@@ -10,7 +10,7 @@
 
 	<div class="tagline">
 		<h2>The best of frameworks and content management systems combined.</h2>
-		<a class="buy" href="<?= url('order'); ?>">Buy Now &mdash; 75% Off For Beta!</a>
+		<a class="buy" href="https://github.com/evantbyrne/burner">Download From Github!</a>
 	</div>
 
 	<div class="grid">
@@ -45,66 +45,13 @@
 				documented as well.</p>
 		</div>
 		<div class="item end">
-			<h3>Beta Deal</h3>
-			<p>Support Burner while it's in beta and save <em>at least</em> 75%. Additionally,
-				if you purchase a site license now, then you will have unlimited access to
-				future updates.</p>
+			<h3>Free</h3>
+			<p>Burner CMS is now free to use and modify.
+				<a href="https://github.com/evantbyrne/burner/blob/master/LICENSE.md">License</a>.</p>
 		</div>
 
 		<div class="clear"></div>
 
-	</div>
-
-	<div class="sub-tagline">
-
-		<h3>1. Define Models</h3>
-		<pre class="prettyprint lang-php">namespace App\Model;
-
-class Photo extends \Core\Model\Base {
-	
-	/**
-	 * @option type = Image
-	 * @option required = Image field is required.
-	 */
-	public $image;
-
-	/**
-	 * @option type = Varchar
-	 * @option length = 100
-	 * @option required = Title field is required.
-	 */
-	public $title;
-
-	/**
-	 * @option type = Text
-	 */
-	public $description;
-
-	/**
-	 * Image Path
-	 * @return string
-	 */
-	public function image_path() {
-
-		return "static/photo/{$this->id}";
-
-	}
-
-}</pre>
-
-		<h3>2. Enable Admin</h3>
-		<pre class="prettyprint lang-php">Config::set('admin_models', array(
-	'Users' =&gt; array('user', 'group', 'membership'),
-	'Gallery' =&gt; array('photo')
-);</pre>
-
-		<h3>3. Manage</h3>
-		<img class="full" src="<?= url('static/tutorial/list.png'); ?>" />
-
-	</div>
-
-	<div class="tagline">
-		<a class="buy" href="<?= url('order'); ?>">Buy Now &mdash; 75% Off For Beta!</a>
 	</div>
 	
 <?php $this->end_extend(); ?>
